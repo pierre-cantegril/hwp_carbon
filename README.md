@@ -4,22 +4,22 @@ Modeling carbon flows in a harvested wood products network
 
 ## What does hwp_carbon do ? 
 
-hwp_carbon creates a direct graph for modelling carbon flows in a harvested wood products network and simulate carbon 
-flows and decomposition through multiples carbon pools. Users can specifies any network configuration they want and 
-adjust the following parameters :
+hwp_carbon creates a direct graph to model carbon flows in a network of harvested wood products and 
+simulate carbon flows and decomposition across multiple carbon pools. Users can specify the network 
+configuration and adjust the following parameters:
 * Carbon pools and their half-life [fixed value for each pool]
 * Split ratio between child pools of a parent pool [variable value if desired]
 * Carbon substitution rate [variable value if desired]
 
-For the moment, harvest wood products degradation is only simulated used a radioactive decay, i.e. each carbon pool has 
+	For the moment, the degradation of harvested products is only simulated used a radioactive decay, i.e. each carbon pool has 
 a half-life which is the time required for a quantity of carbon to reduce to half of its initial value.
 
-Having a cyclic network (also known as cyclic graph) is possible and handled via recursion.
+Having a cyclic network (also known as cyclic graph) is possible and handled via recursion by hwp_carbon.
 
 ## Installing
 The package can be directly installed from github with pip : 
 ```bash
-pip install git+https://github.com/https://github.com/pierre-cantegril/hwp_carbon
+pip install git+https://github.com/pierre-cantegril/hwp_carbon.git
 ```
 
 ### [Optional] Rendering the network as a directed graph
@@ -52,7 +52,7 @@ net = CarbonNetwork(init_data)
 ```
 ### Plotting the network
 `plotting_network` module contains basic code to generate a dot file. If the requirements are met 
-([see this section](#[optional]-rendering-the-network-as-a-directed-graph)), the network can be displayed:
+(see Installation section), the network can be displayed:
 ```python
 from hwp_carbon.network_plotting import network_to_dot
 dot = network_to_dot(net)
