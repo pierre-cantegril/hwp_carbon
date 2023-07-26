@@ -19,10 +19,10 @@ Having a cyclic network (also known as cyclic graph) is possible and handled via
 ## Installing
 The package can be directly installed from github with pip : 
 ```bash
-pip install git+https://github.com/to_be_added
+pip install git+https://github.com/https://github.com/pierre-cantegril/hwp_carbon
 ```
 
-### Rendering the network as a directed graph [Optional installation]
+### [Optional] Rendering the network as a directed graph
 `hwp_carbon` uses [Graphviz](https://www.graphviz.org/) to plot the network as a directed graph. 
 
 If you use pip, you will have to install Graphviz executable. See the installation section here : 
@@ -37,7 +37,7 @@ If you use conde, you can simply install the `python-graphviz` package:
 hwp_carbon creates a network from configuration tables which specifies the nodes, edges and parameters. 
 The tables can also be passed as a dictionary (see `init_data` variable in the below code).
 
-See a [Network Configuration Table Example](./test/test_data.xlsx)
+See a [Network Configuration Table Example](./tests/test_data.xlsx)
 
 #### Use configuration data
 
