@@ -3,18 +3,19 @@ requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name="hwp_carbon"
-version="0.0.1"
-description="Modeling carbon flows in a harvested wood products network."
+name = "hwp_carbon"
+version = "0.0.1"
+description = "Modeling carbon flows in a harvested wood products network."
 readme = "README.md"
-authors = [{"name" = "Pierre Cantegril"}]
+authors = [{ "name" = "Pierre Cantegril" }]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent"]
-license = {file = "LICENSE"}
+license = { file = "LICENSE" }
 dependencies = ["pandas", "graphviz"]
 requires-python = ">=3.9"
+packages = [{ include = "hwp_carbon" }]
 
 [project.urls]
 Homepage = "https://github.com/pierre-cantegril/hwp_carbon"
