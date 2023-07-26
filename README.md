@@ -16,7 +16,7 @@ a half-life which is the time required for a quantity of carbon to reduce to hal
 
 Having a cyclic network (also known as cyclic graph) is possible and handled via recursion by hwp_carbon.
 
-## Installing
+## Installation
 The package can be directly installed from github with pip : 
 ```bash
 pip install git+https://github.com/pierre-cantegril/hwp_carbon.git
