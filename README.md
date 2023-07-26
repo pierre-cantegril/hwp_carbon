@@ -63,7 +63,7 @@ By default, the split ratio is displayed between a pool and its children. Recycl
 
 ![Carbon Network Plot example](./readme_images/test_data.png)
 
-### Simulating carbon flow
+### Simulating carbon flows
 To simulate carbon flows, the user must supply the carbon inputs to the network. The inputs must be the following type :
 `dict[pool_name, Sequence]`:
 ```python
