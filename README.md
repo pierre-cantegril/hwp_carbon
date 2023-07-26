@@ -61,7 +61,7 @@ dot
 ```
 By default, the split ratio is displayed between a pool and its children. Recycling flow are displayed in red.
 
-![Carbon Network Plot example](.\readme_images\test_data.png)
+![Carbon Network Plot example](./readme_images/test_data.png)
 
 ### Simulating carbon flow
 To simulate carbon flows, the user must supply the carbon inputs to the network. The inputs must be the following type :
@@ -97,4 +97,4 @@ Results can be directly be plotted using `pandas.DataFrame.plot()` method:
 ```python
 net.get_pools_attr('carbon_stock', as_dataframe=True).T.plot().legend(loc='center left', bbox_to_anchor=(1, 0.5))
 ```
-![Carbon Network Plot example](.\readme_images\test_results_carbon_stocks.png)
+![Carbon Network Plot example](./readme_images/test_results_carbon_stocks.png)
