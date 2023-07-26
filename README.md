@@ -8,7 +8,7 @@ hwp_carbon creates a direct graph for modelling carbon flows in a harvested wood
 flows and decomposition through multiples carbon pools. Users can specifies any network configuration they want and 
 adjust the following parameters :
 * Carbon pools and their half-life [fixed value for each pool]
-* Split ratio between a parent pool and multiple child pools [variable value if desired]
+* Split ratio between child pools of a parent pool [variable value if desired]
 * Carbon substitution rate [variable value if desired]
 
 For the moment, harvest wood products degradation is only simulated used a radioactive decay, i.e. each carbon pool has 
