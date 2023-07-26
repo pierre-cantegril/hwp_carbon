@@ -11,7 +11,7 @@ configuration and adjust the following parameters:
 * Split ratio between child pools of a parent pool [variable value if desired]
 * Carbon substitution rate [variable value if desired]
 
-	For the moment, the degradation of harvested products is only simulated used a radioactive decay, i.e. each carbon pool has 
+For the moment, the degradation of harvested products is only simulated used a radioactive decay, i.e. each carbon pool has 
 a half-life which is the time required for a quantity of carbon to reduce to half of its initial value.
 
 Having a cyclic network (also known as cyclic graph) is possible and handled via recursion by hwp_carbon.
