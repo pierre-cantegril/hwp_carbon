@@ -17,4 +17,4 @@ dependencies = ["pandas", "graphviz"]
 requires-python = ">=3.9"
 
 [project.urls]
-Homepage = "https://github.com/to_be_created_and_modified"
+Homepage = "https://github.com/pierre-cantegril/hwp_carbon"
