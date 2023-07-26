@@ -52,7 +52,7 @@ net = CarbonNetwork(init_data)
 ```
 ### Plotting the network
 `plotting_network` module contains basic code to generate a dot file. If the requirements are met 
-([See this section](#[Optional]-Rendering-the-network-as-a-directed-graph)), the network can be displayed:
+([see this section](#[optional]-rendering-the-network-as-a-directed-graph)), the network can be displayed:
 ```python
 from hwp_carbon.network_plotting import network_to_dot
 dot = network_to_dot(net)
@@ -79,7 +79,7 @@ of the inputs values (here 4 years because `len(inputs["paper"]) == 4`).
 
 To run the simulation:
 ```python
-net.run_simulation(inputs, steps=steps)
+net.run_simulation(inputs, steps=100)
 ```
 
 ### Results
