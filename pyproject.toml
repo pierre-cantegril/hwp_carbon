@@ -15,7 +15,9 @@ classifiers = [
 license = { file = "LICENSE" }
 dependencies = ["pandas", "graphviz"]
 requires-python = ">=3.9"
-packages = [{ include = "hwp_carbon" }]
 
 [project.urls]
 Homepage = "https://github.com/pierre-cantegril/hwp_carbon"
+
+[tool.setuptools]
+packages = ["hwp_carbon"]
