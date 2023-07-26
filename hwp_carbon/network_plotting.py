@@ -6,7 +6,7 @@ import os
 # Test if rendering dot is possible
 try:
     dot = gz.Digraph(comment='Test')
-    dot.render('test.pdf')
+    dot.render('test')
     os.remove('test.pdf')
 except gz.ExecutableNotFound as e:
     import warnings
