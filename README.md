@@ -28,7 +28,7 @@ pip install git+https://github.com/pierre-cantegril/hwp_carbon.git
 If you use pip, you will have to install Graphviz executable. See the installation section here : 
 [PyPI Graphviz page](https://pypi.org/project/graphviz/).
 
-If you use conde, you can simply install the `python-graphviz` package:
+If you use conda, you can simply install the `python-graphviz` package:
 `conda install python-graphviz`
 
 ## Workflow
