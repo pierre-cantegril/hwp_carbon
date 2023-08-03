@@ -21,7 +21,7 @@ from .network import CarbonNetwork
 def add_pools_to_graph(network: CarbonNetwork, dot: gz.Digraph) -> gz.Digraph:
     """Add pools to a graph"""
     for pool_name, pool in network.pools.items():
-        dot.node(pool_name, pool.long_name)
+        dot.node(f'{pool_name}_{network.pools[pool_name].half_life:.0f}')
 
     # Force top pools on the same level
     top_pools = network.get_network_top_pools()
@@ -29,7 +29,7 @@ def add_pools_to_graph(network: CarbonNetwork, dot: gz.Digraph) -> gz.Digraph:
         #sub.graph_attr['rankdir'] = # TB, LR ...https://graphviz.org/docs/attrs/rankdir/
         sub.attr(rank='same')
         for pool_name in top_pools:
-            sub.node(pool_name)
+            sub.node(f'{pool_name}_{network.pools[pool_name].half_life:.0f}')
 
     # Force child pool to be on the same rank
     with dot.subgraph(name=f'Top pools - childs') as sub:
@@ -38,7 +38,7 @@ def add_pools_to_graph(network: CarbonNetwork, dot: gz.Digraph) -> gz.Digraph:
             pool = network.pools[pool_name]
             for child_name in pool.dst_pools:
                 if child_name == 'atmosphere': continue
-                sub.node(child_name)
+                sub.node(f'{child_name}_{network.pools[child_name].half_life:.0f}')
     return dot
 
 
@@ -52,7 +52,8 @@ def add_arcs_to_graph(network: CarbonNetwork, dot: gz.Digraph, kw_args: Optional
             _kw_args['color'] = 'red'
         factor = flow.factor[0] if hasattr(flow.factor, '__getitem__') else flow.factor
         factor = round(factor, 2)
-        dot.edge(*arc, taillabel=f'{factor}', labelfontsize='10', **_kw_args)
+        _arc = tuple([f'{pool_name}_{network.pools[pool_name].half_life:.0f}' for pool_name in arc])
+        dot.edge(*_arc)#, taillabel=f'{factor}', labelfontsize='10', **_kw_args)
     return dot
 
 
