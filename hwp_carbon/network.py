@@ -167,6 +167,7 @@ class CarbonNetwork:
             self.set_decay_func_as_radioactive()
             self.set_flows_for_simulation(steps)
             self.set_pools_for_simulation(steps)
+            print()
 
         # Simulate
         for pool_name in self.sim_sequence:
@@ -192,10 +193,10 @@ class CarbonNetwork:
                     print('lower threshold for standard decomposition is not reached. No decomposition.')
                     continue
                 if verbose: print('standard decomposition')
-                pool_carbone_after_decay = (pool.decay_func(carbon_input).astype('float64') - carbon_input)
+                pool_carbone_after_decay = pool.decay_func(carbon_input).astype('float64')# - carbon_input # why substract carbon_input?
                 if verbose: print(f'{pool_carbone_after_decay=}')
-                pool.carbon_stock += pool_carbone_after_decay[1:]
-                decayed_carbon = ((pool_carbone_after_decay + carbon_input) - np.append(pool_carbone_after_decay[1:], 0))[:-1]
+                pool.carbon_stock += pool_carbone_after_decay[:-1]
+                decayed_carbon = (carbon_input - np.diff(pool_carbone_after_decay, prepend=0))[:-1]
 
             if verbose: print(f'{_carbon_inputs[pool_name]=}')
             if verbose: print(f'{pool.carbon_stock=}')
